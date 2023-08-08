@@ -55,6 +55,10 @@ public class EasyRecorder {
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.AAC_ADTS);
         mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+     
+        mediaRecorder.setAudioEncodingBitRate(16*44100); // Enahance Recording Quality
+        mediaRecorder.setAudioSamplingRate(44100); // Enahance Recording Quality
+     
         mediaRecorder.setOutputFile(path);
 
         try {
