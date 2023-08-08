@@ -1,9 +1,9 @@
 Easy Recorder By ChikuAI
 
-Website : https://chikuaicode.com
-Instagram : https://instagram.com/chikuaicode
-Facebook : https://facebook.com/chikuaifb
-YouTube : https://youtube.com/ChikuAi
+Website : https://chikuaicode.com <br>
+Instagram : https://instagram.com/chikuaicode  <br>
+Facebook : https://facebook.com/chikuaifb <br>
+YouTube : https://youtube.com/ChikuAi <br>
 
 
 ---------- Key Features
@@ -18,64 +18,64 @@ YouTube : https://youtube.com/ChikuAi
 
 -- callback 
 
-         void onStart();
-         void onRecording(long dur);
-         void onStop(String path);
-         void onEvent(String message);
+    void onStart();
+    void onRecording(long dur);
+    void onStop(String path);
+    void onEvent(String message);
 
          
 
 -- Initialize with Object and callback 
 
-        EasyRecorder easyRecorder = new EasyRecorder(YourActivity.this, new EasyRecorder.ChikuAction() {
-            @Override
-            public void onStart() {
-                // call on start recording
-            }
+    EasyRecorder easyRecorder = new EasyRecorder(YourActivity.this, new EasyRecorder.ChikuAction() {
+      @Override
+       public void onStart() {
+         // call on start recording
+        }
 
-            @Override
-            public void onRecording(long dur) {
-               //call every second while recoding with duration
-            }
+       @Override
+        public void onRecording(long dur) {
+            //call every second while recoding with duration
+        }
 
-            @Override
-            public void onStop(String path) {
-                //call on stop with saved path
-            }
+        @Override
+         public void onStop(String path) {
+             //call on stop with saved path
+         }
 
-            @Override
-            public void onEvent(String message) {
-                // Handle all event with message
-            }
-        });
+         @Override
+         public void onEvent(String message) {
+              // Handle all event with message
+         }
+    });
 
 
 
 
 -- start recoding
 
-       audioRecord.setOnClickListener(v -> {
-            if (easyRecorder.isRecording()) {
-                // Already Recording
-            } else {
-                easyRecorder.start();
-            }
-        });
+    audioRecord.setOnClickListener(v -> {
+     if (easyRecorder.isRecording()) {
+          // Already Recording
+       } else {
+           easyRecorder.start();
+        }
+     });
 
 
         
 -- stop recording
 
 
-        audioRecord.setOnClickListener(v -> {
-            if (easyRecorder.isRecording()) {
-                easyRecorder.stop();
-            }else{
-               // already stopped
-            }
-        });
+    audioRecord.setOnClickListener(v -> {
+      if (easyRecorder.isRecording()) {
+            easyRecorder.stop();
+      }else{
+           // already stopped
+       }
+    });
 
 
 -- set custom path if required
 
-         easyRecorder.setPath(full_path,file_name_with_extension);
+    easyRecorder.setPath(full_path,file_name_with_extension);
